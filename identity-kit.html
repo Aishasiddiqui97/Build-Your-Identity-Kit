@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Identity Kit — Aisha A. Siddiqui</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;450;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #F8FAFC;
+      color: #0F172A;
+      font-family: 'Inter', system-ui, sans-serif;
+      font-weight: 450;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      display: flex;
+      justify-content: center;
+      padding: 64px 24px 80px;
+    }
+    .kit {
+      max-width: 720px;
+      width: 100%;
+    }
+
+    /* ── header ── */
+    .kit-header {
+      margin-bottom: 56px;
+      text-align: center;
+    }
+    .kit-header h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      color: #0F172A;
+    }
+    .kit-header .sub {
+      font-size: 14px;
+      color: #64748B;
+      margin-top: 4px;
+      letter-spacing: 0.3px;
+    }
+    .kit-header .divider {
+      width: 48px;
+      height: 3px;
+      background: #6366F1;
+      border-radius: 4px;
+      margin: 20px auto 0;
+    }
+
+    /* ── sections ── */
+    section { margin-bottom: 52px; }
+    .section-label {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #6366F1;
+      margin-bottom: 20px;
+    }
+
+    /* ── logo section ── */
+    .logo-row {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .logo-preview {
+      flex-shrink: 0;
+      width: 120px;
+      height: 120px;
+      background: #FFFFFF;
+      border: 1px solid rgba(15,23,42,0.06);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 1px 3px rgba(15,23,42,0.04);
+    }
+    .logo-preview svg { display: block; }
+
+    .logo-desc { flex: 1; min-width: 200px; }
+    .logo-desc h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    .logo-desc p {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.6;
+    }
+    .logo-desc .tag {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 12px;
+      font-weight: 500;
+      color: #6366F1;
+      background: rgba(99,102,241,0.08);
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    /* ── typography ── */
+    .font-card {
+      background: #FFFFFF;
+      border: 1px solid rgba(15,23,42,0.06);
+      border-radius: 12px;
+      padding: 24px 28px;
+      box-shadow: 0 1px 3px rgba(15,23,42,0.04);
+    }
+    .font-card + .font-card { margin-top: 14px; }
+    .font-card .role {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #6366F1;
+      margin-bottom: 6px;
+    }
+    .font-card .name {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    .font-card.heading-font .name { font-family: 'Space Grotesk', sans-serif; }
+    .font-card.body-font .name { font-family: 'Inter', sans-serif; }
+    .font-card .weights {
+      font-size: 13px;
+      color: #64748B;
+      margin-bottom: 10px;
+    }
+    .font-card .specimen {
+      font-size: 15px;
+      color: #334155;
+      padding: 10px 0 0;
+      border-top: 1px solid rgba(15,23,42,0.05);
+    }
+    .font-card .specimen span {
+      display: inline-block;
+      margin-right: 8px;
+      margin-bottom: 4px;
+      padding: 1px 8px;
+      border-radius: 4px;
+      background: #F1F5F9;
+      font-size: 12px;
+      color: #475569;
+    }
+
+    /* ── color palette ── */
+    .palette {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .swatch {
+      flex: 1;
+      min-width: 120px;
+      background: #FFFFFF;
+      border: 1px solid rgba(15,23,42,0.06);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(15,23,42,0.04);
+    }
+    .swatch-bar {
+      height: 80px;
+    }
+    .swatch-info {
+      padding: 12px 14px 14px;
+    }
+    .swatch-info .swatch-name {
+      font-size: 13px;
+      font-weight: 600;
+      color: #0F172A;
+    }
+    .swatch-info .swatch-hex {
+      font-size: 12px;
+      color: #64748B;
+      font-weight: 450;
+      margin-top: 1px;
+    }
+    .swatch-info .swatch-usage {
+      font-size: 12px;
+      color: #475569;
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* ── style note ── */
+    .style-note {
+      background: #FFFFFF;
+      border: 1px solid rgba(15,23,42,0.06);
+      border-radius: 12px;
+      padding: 24px 28px;
+      box-shadow: 0 1px 3px rgba(15,23,42,0.04);
+    }
+    .style-note .line {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #334155;
+    }
+    .style-note .line strong {
+      color: #0F172A;
+      font-weight: 600;
+    }
+    .style-note .line + .line { margin-top: 4px; }
+    .style-note .line .hl { color: #6366F1; }
+
+    /* ── footer ── */
+    .kit-footer {
+      margin-top: 52px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(15,23,42,0.06);
+      text-align: center;
+    }
+    .kit-footer p {
+      font-size: 12px;
+      color: #94A3B8;
+      letter-spacing: 0.3px;
+    }
+  </style>
+</head>
+<body>
+  <div class="kit">
+
+    <header class="kit-header">
+      <h1>Portfolio Identity Kit</h1>
+      <p class="sub">Aisha A. Siddiqui · Full Stack AI Developer</p>
+      <div class="divider"></div>
+    </header>
+
+    <!-- ─── Logo / Favicon ─── -->
+    <section>
+      <div class="section-label">Logo / Favicon</div>
+      <div class="logo-row">
+        <div class="logo-preview">
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="8" y="6" width="48" height="52" rx="8" fill="#F8FAFC" stroke="#6366F1" stroke-width="2.5"/>
+            <path d="M20 44 L26 20 L32 36 L38 20 L44 44" stroke="#6366F1" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            <rect x="37" y="36" width="10" height="2" rx="1" fill="#22D3EE" opacity="0.5"/>
+          </svg>
+        </div>
+        <div class="logo-desc">
+          <h3><code>AAS</code> monogram · cursor-cut favicon</h3>
+          <p>A lowercase <code>a</code> with a diagonal terminal-cursor cut doubles as a forward arrow — signalling active development and AI inference direction.</p>
+          <span class="tag">Indigo #6366F1 · Cyan #22D3EE</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Typography ─── -->
+    <section>
+      <div class="section-label">Typography</div>
+
+      <div class="font-card heading-font">
+        <div class="role">Heading Font</div>
+        <div class="name">Space Grotesk</div>
+        <div class="weights">Weights 500 · 600 · 700</div>
+        <div class="specimen">
+          <span>Section titles</span>
+          <span>Hero text</span>
+          <span>Nav links</span>
+          <span>h1–h4</span>
+          <br>
+          <span style="font-family:'Space Grotesk';font-weight:700;font-size:28px;color:#0F172A;">Building intelligent systems</span>
+        </div>
+      </div>
+
+      <div class="font-card body-font">
+        <div class="role">Body Font</div>
+        <div class="name">Inter</div>
+        <div class="weights">Weights 400 · 450 · 500</div>
+        <div class="specimen">
+          <span>Paragraphs</span>
+          <span>Code blocks</span>
+          <span>Labels</span>
+          <span>Captions</span>
+          <br>
+          <span style="font-family:'Inter';font-weight:450;font-size:15px;color:#334155;">Full-stack developer building AI-powered web applications with React, Next.js, and Python.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Color Palette ─── -->
+    <section>
+      <div class="section-label">Color Palette</div>
+      <div class="palette">
+        <div class="swatch">
+          <div class="swatch-bar" style="background:#6366F1;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Indigo</div>
+            <div class="swatch-hex">#6366F1</div>
+            <div class="swatch-usage">Primary — links, buttons, borders, active states</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-bar" style="background:#0F172A;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Slate 900</div>
+            <div class="swatch-hex">#0F172A</div>
+            <div class="swatch-usage">Text — headings &amp; body copy</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-bar" style="background:#F8FAFC;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Slate 50</div>
+            <div class="swatch-hex">#F8FAFC</div>
+            <div class="swatch-usage">Background — page &amp; card surfaces</div>
+          </div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-bar" style="background:#22D3EE;"></div>
+          <div class="swatch-info">
+            <div class="swatch-name">Cyan 400</div>
+            <div class="swatch-hex">#22D3EE</div>
+            <div class="swatch-usage">Accent — AI badges, tech tags, terminal hints</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Style Note ─── -->
+    <section>
+      <div class="section-label">Style Note</div>
+      <div class="style-note">
+        <div class="line">
+          <strong>Space Grotesk &amp; Inter.</strong>
+          Colors: <span class="hl">#6366F1</span>, <span class="hl">#0F172A</span>, <span class="hl">#F8FAFC</span>, <span class="hl">#22D3EE</span>.
+        </div>
+        <div class="line">
+          Minimal AI-focused design with a calm futuristic mood where projects remain the main visual anchor and the identity stays out of their way.
+        </div>
+      </div>
+    </section>
+
+    <footer class="kit-footer">
+      <p>Identity Kit · Aisha A. Siddiqui · Frontend AI Engineering Track</p>
+    </footer>
+
+  </div>
+</body>
+</html>
